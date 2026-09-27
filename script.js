@@ -109,58 +109,6 @@ filterBar.addEventListener('click', (e) => {
 
 renderCarousel();
 
-/* ---------- Skills chart ---------- */
-/* Adjust these numbers (0-100) to match how you'd actually rate your comfort with each area */
-const skillLabels = ['HTML/CSS', 'JavaScript', 'Python', 'SQL/Databases', 'C#', 'Power BI / Data Viz', 'UX/UI Design'];
-const skillLevels = [85, 70, 65, 75, 55, 70, 65];
-
-const ctx = document.getElementById('skillsChart');
-let chartRendered = false;
-
-function renderChart() {
-  if (chartRendered || !ctx) return;
-  chartRendered = true;
-
-  const rootStyles = getComputedStyle(document.documentElement);
-  const pink = rootStyles.getPropertyValue('--pink').trim();
-  const ink = rootStyles.getPropertyValue('--ink-soft').trim();
-
-  new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: skillLabels,
-      datasets: [{
-        label: 'Comfort level',
-        data: skillLevels,
-        backgroundColor: pink,
-        borderRadius: 10,
-        maxBarThickness: 40
-      }]
-    },
-    options: {
-      responsive: true,
-      animation: { duration: 900, easing: 'easeOutBack' },
-      plugins: { legend: { display: false } },
-      scales: {
-        y: { beginAtZero: true, max: 100, ticks: { color: ink }, grid: { color: 'rgba(150,100,130,0.1)' } },
-        x: { ticks: { color: ink }, grid: { display: false } }
-      }
-    }
-  });
-}
-
-/* Render the chart once it scrolls into view */
-const chartObserver = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      renderChart();
-      chartObserver.disconnect();
-    }
-  });
-}, { threshold: 0.3 });
-
-if (ctx) chartObserver.observe(ctx);
-
 /* ---------- Theme toggle ---------- */
 const themeToggle = document.getElementById('theme-toggle');
 const root = document.documentElement;
