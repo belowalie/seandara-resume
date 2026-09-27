@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Seandara Sundram — Portfolio</title>
+<link rel="stylesheet" href="style.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo">seandara<span class="dot">.</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact" class="nav-cta">Get in Touch</a>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">🌙</button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Business &amp; Financial Technology · Year 2</p>
+    <h1 class="hero-title">Hi, I'm Seandara —<br>I build things that make<br>data and design get along.</h1>
+    <p class="hero-sub">Nanyang Polytechnic student mixing web development, database design, data analytics and UX/UI into projects people actually enjoy using. Currently hunting for an internship where I can keep doing exactly that.</p>
+    <div class="hero-actions">
+      <a href="#projects" class="btn btn-primary">See my projects</a>
+      <a href="mailto:seandara28@gmail.com" class="btn btn-ghost">Email me</a>
+    </div>
+  </div>
+  <div class="hero-blob" aria-hidden="true"></div>
+</header>
+
+<main>
+
+  <section class="section" id="about">
+    <div class="section-inner about-grid">
+      <div class="about-card">
+        <h2>A little about me</h2>
+        <p>I'm a Year 2 Diploma in Business and Financial Technology student, currently on my semester break and looking for what's next. I like projects that sit right at the edge of tech and business — a dashboard that tells a clear story, a database that actually makes sense, an app that doesn't confuse the person using it.</p>
+        <p>Outside of coursework, I've picked up bits of blockchain (hello, Ethereum), pulled espresso shots at Tim Hortons, and I'm slowly building a habit of finishing side projects instead of just starting them.</p>
+      </div>
+      <div class="about-facts">
+        <div class="fact-pill">🎓 NYP · Business &amp; Financial Tech</div>
+        <div class="fact-pill">📍 Singapore</div>
+        <div class="fact-pill">💻 5 projects across web, data &amp; databases</div>
+        <div class="fact-pill">☕ Ex-barista, current builder</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tint" id="skills">
+    <div class="section-inner">
+      <h2>What I work with</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>Programming</h3>
+          <ul><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Python</li><li>SQL</li><li>C#</li></ul>
+        </div>
+        <div class="skill-card">
+          <h3>Frameworks</h3>
+          <ul><li>Flask</li><li>Bootstrap</li></ul>
+        </div>
+        <div class="skill-card">
+          <h3>Analytics &amp; Design</h3>
+          <ul><li>Power BI</li><li>Power Query</li><li>Figma</li><li>Canva</li></ul>
+        </div>
+        <div class="skill-card">
+          <h3>Tools &amp; Database</h3>
+          <ul><li>Visual Studio</li><li>Microsoft Office</li><li>MySQL</li><li>MySQL Workbench</li></ul>
+        </div>
+      </div>
+
+      <div class="chart-panel">
+        <h3>Skills at a glance <span class="chart-note">(edit the numbers in script.js to match how you'd actually rate yourself)</span></h3>
+        <canvas id="skillsChart" height="260"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="section-inner">
+      <h2>Featured projects</h2>
+
+      <div class="filter-bar" id="filterBar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="python">Python</button>
+        <button class="filter-btn" data-filter="js">JS</button>
+        <button class="filter-btn" data-filter="database">Database</button>
+        <button class="filter-btn" data-filter="analytics">Analytics</button>
+        <button class="filter-btn" data-filter="csharp">C#</button>
+      </div>
+
+      <div class="carousel" id="carousel">
+        <button class="carousel-arrow carousel-prev" id="prevBtn" aria-label="Previous project">‹</button>
+        <div class="carousel-track-wrap">
+          <div class="carousel-track" id="carouselTrack"></div>
+        </div>
+        <button class="carousel-arrow carousel-next" id="nextBtn" aria-label="Next project">›</button>
+      </div>
+      <div class="carousel-dots" id="carouselDots"></div>
+    </div>
+  </section>
+
+  <section class="section section-tint" id="experience">
+    <div class="section-inner experience-grid">
+      <div>
+        <h2>Work experience</h2>
+        <div class="exp-card">
+          <h3>Tim Hortons — Part-time Barista</h3>
+          <p>Kept a fast-paced counter running smoothly: preparing quality beverages, processing transactions accurately, and working closely with the team to keep daily operations efficient.</p>
+        </div>
+      </div>
+      <div>
+        <h2>Certifications</h2>
+        <div class="cert-list">
+          <div class="cert-item">
+            <strong>IBM SkillsBuild</strong>
+            <span>Web Development Fundamentals &amp; User Experience Design Fundamentals</span>
+          </div>
+          <div class="cert-item">
+            <strong>Anthropic</strong>
+            <span>AI Fluency: Framework &amp; Foundations</span>
+          </div>
+          <div class="cert-item">
+            <strong>HackQuest</strong>
+            <span>Certified Ethereum Learner</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section contact" id="contact">
+    <div class="section-inner contact-inner">
+      <h2>Let's build something together</h2>
+      <p>Open to internships and collaborations across web dev, data and design. The fastest way to reach me is email.</p>
+      <div class="contact-actions">
+        <a href="mailto:seandara28@gmail.com" class="btn btn-primary">seandara28@gmail.com</a>
+        <a href="https://www.linkedin.com/in/seandara-sundram-8292983aa/" target="_blank" rel="noopener" class="btn btn-ghost">LinkedIn ↗</a>
+        <a href="tel:89181323" class="btn btn-ghost">89181323</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>Made with 💗 by Seandara Sundram</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
